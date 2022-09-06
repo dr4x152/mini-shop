@@ -1,0 +1,148 @@
+/* Styl Skrzynki */
+@keyframes animationGradient {
+  0% {
+    background-position: 10% 0%;
+  }
+  50% {
+    background-position: 91% 100%;
+  }
+  100% {
+    background-position: 10% 0%;
+  }
+}
+.cube {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(0);
+  animation: rotationCube 60s infinite ease-in-out;
+}
+.cube__wall {
+  position: absolute;
+  border: 3px solid #0e0e0e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+.cube__front {
+  background: #000000;
+  transform: rotateY(0deg) translateZ(100px);
+}
+.cube__back {
+  background: #000000;
+  transform: rotateY(180deg) translateZ(100px);
+}
+.cube__right {
+  background: #000000;
+  transform: rotateY(90deg) translateZ(100px);
+}
+.cube__left {
+  background: black;
+  transform: rotateY(-90deg) translateZ(100px);
+}
+.cube__bottom {
+  background: #363636;
+  transform: rotateX(-90deg) translateZ(100px);
+}
+.inside {
+  background: url('https://kropkawkratke.pl/4862-large_default/filc-170g-czarny-25cm.jpg');
+}
+@keyframes rotationCube {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+
+  25% {
+    transform: rotateX(-60deg) rotateY(230deg);
+  }
+
+  50% {
+    transform: rotateX(30deg) rotateY(-230deg);
+  }
+  75% {
+    transform: rotateX(-60deg) rotateY(230deg);
+  }
+  100% {
+    transform:
+            rotateX(0deg) rotateY(0deg);
+  }
+}
+
+/* Pozycja Skrzynki */
+.col.pos-box {
+  display: flex;
+  justify-content: center;
+  padding: 100px 0 100px 0;
+}
+
+/* Pozycja parametrów */
+.p_width,.p_height,.p_length {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  border-left: 1px dashed black;
+  border-right: 1px dashed black;
+  border-top: 1px solid black;
+}
+.p_height {
+  border-left: 1px solid black;
+  border-bottom: 1px dashed black;
+  border-top: 1px dashed black;
+  border-right: none;
+}
+
+/* Formularze */
+.form-2 {
+  display: none;
+}
+
+@media (min-width: 0px) {
+  .row {
+    flex-direction: column;
+  }
+  .pos-box {
+    padding: 50px 0 50px 0;
+  }
+  .column {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+  .column {
+    width: 70%;
+  }
+}
+
+@media (min-width: 992px) {
+  .row {
+    flex-direction: column;
+  }
+  .column {
+    width: 55%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .row {
+    flex-direction: row;
+  }
+  .column {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .row {
+    flex-direction: row;
+  }
+  .column {
+    width: 40%;
+  }
+}
